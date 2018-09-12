@@ -14,9 +14,7 @@ class Search extends Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
-  submitForm(values) { 
-    console.log("values");
-       
+  submitForm(values) {        
     this.props.searchArticle(values);
   }
 
