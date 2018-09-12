@@ -50,7 +50,7 @@ router.put('/myarticles/delete', function (req, res, next) {
 
 // Search an article
 router.put('/search', function(req, res, next) {
-  connection.query(`SELECT * FROM Objets WHERE article LIKE '%${req.body.article}%';`, function(error, results, fields) {
+  connection.query(`SELECT * FROM Objets WHERE article LIKE '%${req.body.article}%' UNION  SELECT * FROM Objets WHERE position LIKE '%${req.body.position}%';`, function(error, results, fields) {
     if (error) {
       console.log("error : ", error);
       res.sendStatus(500);
