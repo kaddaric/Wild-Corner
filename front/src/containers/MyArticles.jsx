@@ -25,8 +25,8 @@ class MyArticles extends Component {
         <Container fluid>
           <Row className="row">
             <Menu />
-            <Col sm="10">
-              <h1 className="col-12">Mes articles</h1>
+            <Col sm="10" className="main">
+              <h1 className="title col-12">Mes articles</h1>
               <ArticlesList articles={myArticles} myaccount={true}/>
               <Button tag={Link} to='./myarticles/add'>Ajouter un article</Button>
             </Col>

@@ -3,14 +3,15 @@ import { objets } from './objets';
 import { myArticles } from './myArticles';
 import { reducer as formReducer } from 'redux-form';
 import { search } from './search';
+import { signIn } from './signIn';
 
 
 const allReducers = combineReducers({
   objets,
   myArticles,
   search,
+  signIn,
   form: formReducer,
-  formsearch: formReducer,
 });
 
 export default allReducers;

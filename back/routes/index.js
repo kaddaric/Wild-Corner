@@ -65,11 +65,6 @@ router.put('/search', function(req, res, next) {
   const bricolage = req.body.Bricolage ? "Bricolage" : "1";
   const jeu = req.body.Jeu ? "Jeu - Jouet" : "1";
   const selecCategory = req.body.Immobilier || req.body.Vetement || req.body.Bricolage || req.body.Jeu ? `categorie IN ('${immobilier}', '${vetement}', '${bricolage}', '${jeu}')` : "1";
-  console.log(selecCategory);
-  
-
-  console.log(`SELECT * FROM Objets WHERE ${selectArticle} AND ${selectLocalisation} AND ${priceRange} AND ${selecCategory};`);
-  
   
   connection.query(`SELECT * FROM Objets WHERE ${selectArticle} AND ${selectLocalisation} AND ${priceRange} AND ${selecCategory};`, function(error, results, fields) {
     if (error) {
@@ -79,6 +74,27 @@ router.put('/search', function(req, res, next) {
     else {     
       res.send(results);
     }  
+  });
+});
+
+// Check Sign in
+router.put('/signin', function(req, res, next) {  
+  const login = req.body.login;
+  connection.query(`SELECT login , password FROM Proprietaires WHERE login = '${login}';`, function(error, results, fields) {
+    if (error) {console.log("error : ", error)}
+    else {       
+      console.log(req.body.password, results[0].password);
+      
+      req.body.password === results[0].password          
+        ? res.send({
+            ...results,
+            logged: true
+          }) 
+        : res.send({
+            logged: false,
+            error: "identifiant incorrect",
+          });
+    }   
   });
 });
 

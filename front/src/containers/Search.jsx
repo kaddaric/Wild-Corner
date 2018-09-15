@@ -26,8 +26,8 @@ class Search extends Component {
         <Container fluid>
           <Row>
             <Menu />
-            <div className="col-sm-10">
-              <h1 className="col-12">Rechercher un article</h1>
+            <div className="main col-sm-10">
+              <h1 className="title col-12">Rechercher un article</h1>
               <FormSearch onSubmit={this.submitForm} />
               <ArticlesList articles={findArticles}/>
             </div>

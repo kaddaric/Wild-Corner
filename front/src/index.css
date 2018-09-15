@@ -1,5 +1,23 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }
+
+.Menu {
+  height: 100vh;
+  background-color: #455357; }
+  .Menu .logo {
+    justify-content: center; }
+  .Menu .menuButton {
+    justify-content: center;
+    text-align: center; }
+    .Menu .menuButton .icone {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background-color: #ffffff; }
+
+.main {
+  background-color: #c8bede; }
+  .main .title {
+    border-bottom: solid 2px #c52121; }

@@ -13,11 +13,9 @@ class Home extends Component {
       <div className="Home">
         <Container fluid>
           <Row>
-            
             <Menu />
-            
-            <div className="col-sm-10">
-              <h1 className="col-12">Les articles à votre disposition</h1>
+            <div className="main col-sm-10">
+              <h1 className="title col-12">Les articles à votre disposition</h1>
               <AllArticles />
             </div>
           </Row>

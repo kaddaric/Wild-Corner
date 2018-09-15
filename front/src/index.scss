@@ -1,0 +1,42 @@
+
+$primary-color: #f98830;
+$secondary-color: #455357;
+$third-color: #c8bede;
+$text-color: #000000;
+$active-color: #ffffff;
+$dark-red: #c52121;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Menu {
+  height: 100vh;
+  background-color: $secondary-color;
+  .logo {
+    justify-content: center;
+  }
+  .menuButton {
+    justify-content: center;
+    text-align: center;
+    .icone {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background-color: $active-color;
+    }
+  }
+}
+
+.main {
+  background-color: $third-color;
+  .title {
+    border-bottom: solid 2px $dark-red;
+  }
+}
+
+
+
+
