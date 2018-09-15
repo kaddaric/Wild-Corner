@@ -81,7 +81,7 @@ class FormSearch extends Component {
                       name="prix"
                       component="input"
                       type="radio"
-                      value="151,200"
+                      value="151,9999999999"
                     />{' '}
                     plus de 200 €
                   </label>
