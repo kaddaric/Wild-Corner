@@ -50,14 +50,24 @@ router.put('/myarticles/delete', function (req, res, next) {
 
 // Search an article
 router.put('/search', function(req, res, next) {
-  connection.query(`SELECT * FROM Objets WHERE article LIKE '%${req.body.article}%' AND position LIKE '%${req.body.position}%';`, function(error, results, fields) {
+  const article = req.body.article ? req.body.article : "";
+  const localisation = req.body.position ? req.body.position : "";
+  const valueMin = req.body.prix ? parseInt(req.body.prix.split(',')[0], 10) : null;
+  const valueMax = req.body.prix ? parseInt(req.body.prix.split(',')[1], 10) : null;
+  const priceRange = valueMin ? `prix BETWEEN ${valueMin} AND ${valueMax}` : "";
+  console.log(valueMin);
+  console.log(priceRange, `AND prix BETWEEN ${valueMin} AND ${valueMax}`);
+  console.log(`SELECT * FROM Objets WHERE article LIKE '%${article}%' AND position LIKE '%${localisation}%' AND ${priceRange};`);
+  
+  
+  connection.query(`SELECT * FROM Objets WHERE article LIKE '%${article}%' AND position LIKE '%${localisation}%' AND ${priceRange};`, function(error, results, fields) {
     if (error) {
       console.log("error : ", error);
       res.sendStatus(500);
-     }
-   else {     
-     res.send(results);
-   }  
+    }
+    else {     
+      res.send(results);
+    }  
   });
 });
 

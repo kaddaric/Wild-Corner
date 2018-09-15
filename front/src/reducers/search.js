@@ -1,5 +1,3 @@
-
-
 const initialState = [];
 
 export function search(state = initialState, action) {

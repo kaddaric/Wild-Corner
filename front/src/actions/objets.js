@@ -32,16 +32,14 @@ export function addArticle(values) {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        method: "PUT",
+        method: "POST",
         body: JSON.stringify(values)
       })
     );
   };  
 }
 
-export function searchArticle(values) {
-  console.log("actions : ", values);
-  
+export function searchArticle(values) {  
   return (dispatch) => {
     return (
       fetch("http://localhost:5000/api/search", {

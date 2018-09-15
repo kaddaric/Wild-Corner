@@ -48,7 +48,7 @@ class FormSearch extends Component {
                       name="prix"
                       component="input"
                       type="radio"
-                      value="1"
+                      value="1,50"
                     />{' '}
                     de 0 à 50 €
                   </label>
@@ -59,7 +59,7 @@ class FormSearch extends Component {
                       name="prix"
                       component="input"
                       type="radio"
-                      value="2"
+                      value="51,100"
                     />{' '}
                     de 50 à 100 €
                   </label>
@@ -70,7 +70,7 @@ class FormSearch extends Component {
                       name="prix"
                       component="input"
                       type="radio"
-                      value="3"
+                      value="101,150"
                     />{' '}
                     de 100 à 150 €
                   </label>
@@ -81,7 +81,7 @@ class FormSearch extends Component {
                       name="prix"
                       component="input"
                       type="radio"
-                      value="4"
+                      value="151,200"
                     />{' '}
                     plus de 200 €
                   </label>
@@ -148,7 +148,7 @@ class FormSearch extends Component {
   }
 }
 FormSearch = reduxForm({
-  form: 'serachArticle'
+  form: 'searchArticle'
 })(FormSearch)
 
 export default FormSearch;
