@@ -59,11 +59,19 @@ router.put('/search', function(req, res, next) {
   const valueMin = req.body.prix ? parseInt(req.body.prix.split(',')[0], 10) : null;
   const valueMax = req.body.prix ? parseInt(req.body.prix.split(',')[1], 10) : null;
   const priceRange = valueMin ? `prix BETWEEN ${valueMin} AND ${valueMax}` : "1";
-  console.log(valueMin);
-  console.log(`SELECT * FROM Objets WHERE ${selectArticle} AND ${selectLocalisation} AND ${priceRange};`);
+
+  const immobilier = req.body.Immobilier ? "Immobilier" : "1";
+  const vetement = req.body.Vetement ? "Vetement" : "1";
+  const bricolage = req.body.Bricolage ? "Bricolage" : "1";
+  const jeu = req.body.Jeu ? "Jeu - Jouet" : "1";
+  const selecCategory = req.body.Immobilier || req.body.Vetement || req.body.Bricolage || req.body.Jeu ? `categorie IN ('${immobilier}', '${vetement}', '${bricolage}', '${jeu}')` : "1";
+  console.log(selecCategory);
+  
+
+  console.log(`SELECT * FROM Objets WHERE ${selectArticle} AND ${selectLocalisation} AND ${priceRange} AND ${selecCategory};`);
   
   
-  connection.query(`SELECT * FROM Objets WHERE ${selectArticle} AND ${selectLocalisation} AND ${priceRange};`, function(error, results, fields) {
+  connection.query(`SELECT * FROM Objets WHERE ${selectArticle} AND ${selectLocalisation} AND ${priceRange} AND ${selecCategory};`, function(error, results, fields) {
     if (error) {
       console.log("error : ", error);
       res.sendStatus(500);

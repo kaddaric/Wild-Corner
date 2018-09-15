@@ -83,7 +83,7 @@ class FormSearch extends Component {
                       type="radio"
                       value="151,9999999999"
                     />{' '}
-                    plus de 200 €
+                    plus de 150 €
                   </label>
                 </Col>
               </div>
@@ -92,45 +92,45 @@ class FormSearch extends Component {
               <label>Par catégorie</label>
               <div>
                 <Col sm="12">
-                  <label>
+                  <label htmlFor="Immobilier">
                     <Field
-                      name="catégorie"
+                      name="Immobilier"
+                      id="Immobilier"
                       component="input"
-                      type="radio"
-                      value="Immobilier"
+                      type="checkbox"
                     />{' '}
                     Immobilier
                   </label>
                 </Col>
                 <Col sm="12">
-                  <label>
+                  <label htmlFor="Vetement">
                     <Field
-                      name="catégorie"
+                      name="Vetement"
+                      id="Vetement"
                       component="input"
-                      type="radio"
-                      value="Vetement"
+                      type="checkbox"
                     />{' '}
-                    Vetement
+                    Vêtement
                   </label>
                 </Col>
                 <Col sm="12">
-                  <label>
+                  <label htmlFor="Bricolage">
                     <Field
-                      name="catégorie"
+                      name="Bricolage"
+                      id="Bricolage"
                       component="input"
-                      type="radio"
-                      value="Briolage"
+                      type="checkbox"
                     />{' '}
-                    Briolage
+                    Bricolage
                   </label>
                 </Col>
                 <Col sm="12">
-                  <label>
+                  <label htmlFor="Jeu">
                     <Field
-                      name="catégorie"
+                      name="Jeu"
+                      id="Jeu"
                       component="input"
-                      type="radio"
-                      value="Jeu - Jouet"
+                      type="checkbox"
                     />{' '}
                     Jeu - Jouet
                   </label>
