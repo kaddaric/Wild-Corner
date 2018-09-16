@@ -22,13 +22,13 @@ class Menu extends Component {
           <NavItem>
             <Col className="menuButton mb-5">
               <Row className="icone" tag={Link} to="/myarticles">
-                <FontAwesomeIcon icon="fa-user" />
+                <FontAwesomeIcon icon="fas fa-user" />
               </Row>
               <Row className="legende">John</Row>
             </Col>
             <Col className="menuButton mb-5">
               <Row className="icone" tag={Link} to="/search">
-                <FontAwesomeIcon icon="fa-user" />
+                <FontAwesomeIcon icon="fas fa-user" />
               </Row>
               <Row className="legende">Rechercher</Row>
             </Col>
