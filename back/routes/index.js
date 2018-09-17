@@ -82,9 +82,7 @@ router.put('/signin', function(req, res, next) {
   const login = req.body.login;
   connection.query(`SELECT login , password FROM Proprietaires WHERE login = '${login}';`, function(error, results, fields) {
     if (error) {console.log("error : ", error)}
-    else {       
-      console.log(req.body.password, results[0].password);
-      
+    else {      
       req.body.password === results[0].password          
         ? res.send({
             ...results,

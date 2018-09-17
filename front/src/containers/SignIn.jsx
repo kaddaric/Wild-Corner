@@ -21,6 +21,8 @@ class SignIn extends Component {
     return (
       <div className="SignIn">
         <Container>
+          <h1 className="text-center my-5">WILD CORNER</h1>
+          <h4 className="text-center my-5">Veuillez vous identifiez</h4>
           <FormSignIn onSubmit={this.submitForm}/>
         </Container>
       </div>
