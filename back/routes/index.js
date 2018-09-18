@@ -78,18 +78,18 @@ router.put('/search', function(req, res, next) {
 });
 
 // Check Sign in
-router.put('/signin', function(req, res, next) {  
+router.put('/signin', function(req, res, next) {    
   const login = req.body.login;
   connection.query(`SELECT login , password FROM Proprietaires WHERE login = '${login}';`, function(error, results, fields) {
     if (error) {console.log("error : ", error)}
-    else {      
+    else {     
       req.body.password === results[0].password          
         ? res.send({
             ...results,
-            logged: true
+            isLogged: true
           }) 
         : res.send({
-            logged: false,
+            isLogged: false,
             error: "identifiant incorrect",
           });
     }   

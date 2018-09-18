@@ -17,30 +17,32 @@ class FormSearch extends Component {
       <div className="FormSearch">
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Par mot clé</label>
+            <label className="labelForm">Par mot clé</label>
             <div>
               <Field
                 name="article"
                 component="input"
                 type="text"
                 placeholder="Rechercher un article"
+                className="form-control" 
               />
             </div>
           </div>
           <div>
-            <label>Par localisation</label>
+            <label className="labelForm">Par localisation</label>
             <div>
               <Field
                 name="position"
                 component="input"
                 type="text"
                 placeholder="Rechercher une localisation"
+                className="form-control" 
               />
             </div>
           </div>
           <Row>
             <Col sm="6">
-              <label>Par prix</label>
+              <label className="labelForm">Par prix</label>
               <div>
                 <Col sm="12">
                   <label>
@@ -89,7 +91,7 @@ class FormSearch extends Component {
               </div>
             </Col>
             <Col sm="6">
-              <label>Par catégorie</label>
+              <label className="labelForm">Par catégorie</label>
               <div>
                 <Col sm="12">
                   <label htmlFor="Immobilier">

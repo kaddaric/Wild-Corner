@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import { Button, Container, Row, Col } from 'reactstrap';
+import { Button, Container, Row } from 'reactstrap';
 import Menu from './Menu';
 import ArticlesList from './ArticlesList';
 import { selectMyArticle } from '../actions/objets'
@@ -23,13 +23,15 @@ class MyArticles extends Component {
     return (
       <div className="MyArticle">
         <Container fluid>
-          <Row className="row">
+          <Row>
             <Menu />
-            <Col sm="10" className="main">
+            <div className="main col-sm-10">
               <h1 className="title col-12">Mes articles</h1>
-              <ArticlesList articles={myArticles} myaccount={true}/>
-              <Button tag={Link} to='./myarticles/add'>Ajouter un article</Button>
-            </Col>
+              <div className="content">
+                <ArticlesList articles={myArticles} myaccount={true} />
+                <Button tag={Link} to='./myarticles/add'>Ajouter un article</Button>
+              </div>
+            </div>
           </Row>
         </Container>
       </div>
@@ -41,6 +43,7 @@ class MyArticles extends Component {
 const mapStateToProps = (state) => {
   return {
     myArticles: state.myArticles,
+    signIn: state.signIn,
   };
 };
 

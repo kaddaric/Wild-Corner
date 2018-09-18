@@ -5,11 +5,6 @@ import { deleteMyArticle } from '../actions/objets';
 import { Badge } from 'reactstrap'
 
 class ArticlesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }    
-  
 
   render() {
 

@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-export const signIn = (values) => {
-  console.log("actions : ", values);
-  
+export const signIn = (values) => {  
   return (dispatch) => {
     axios.put('http://localhost:5000/api/signin',  values)
       .then(res => {        

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
+import { Button } from 'reactstrap';
 
 
 class FormAddArticle extends Component {
@@ -16,51 +17,55 @@ class FormAddArticle extends Component {
       <div className="FormAddArticle">
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Article</label>
+            <label className="labelForm">Article</label>
             <div>
               <Field
                 name="article"
                 component="input"
                 type="text"
                 placeholder="Article"
+                className="form-control" 
               />
             </div>
           </div>
           <div>
-            <label>Position</label>
+            <label className="labelForm">Position</label>
             <div>
               <Field
                 name="position"
                 component="input"
                 type="text"
                 placeholder="Position"
+                className="form-control" 
               />
             </div>
           </div>
           <div>
-            <label>Prix</label>
+            <label className="labelForm">Prix</label>
             <div>
               <Field
                 name="prix"
                 component="input"
                 type="text"
                 placeholder="Prix"
+                className="form-control" 
               />
             </div>
           </div>
           <div>
-            <label>Identification</label>
+            <label className="labelForm">Identification</label>
             <div>
               <Field
                 name="id_propriétaire"
                 component="input"
                 type="text"
                 placeholder="Id"
+                className="form-control" 
               />
             </div>
           </div>
           <div>
-            <button type="submit" disabled={pristine || submitting}>Envoyer</button>
+            <Button py-2 type="submit" disabled={pristine || submitting}>Envoyer</Button>
           </div>
         </form>
       </div>
@@ -68,7 +73,6 @@ class FormAddArticle extends Component {
   }
 }
 FormAddArticle = reduxForm({
-  // a unique name for the form
   form: 'newArticle'
 })(FormAddArticle)
 

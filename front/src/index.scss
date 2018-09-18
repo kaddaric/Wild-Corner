@@ -19,13 +19,22 @@ body {
     justify-content: center;
   }
   .menuButton {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     .icone {
-      height: 150px;
-      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 100px;
       border-radius: 50%;
       background-color: $active-color;
+      margin-bottom: 1em;
+    }
+    .legende {
+      color: $active-color;
     }
   }
 }
@@ -34,7 +43,13 @@ body {
   background-color: $third-color;
   .title {
     border-bottom: solid 2px $dark-red;
+    margin: 1em;
+  }
+  .content {
+    margin: 3em;
   }
 }
 
-
+.labelForm {
+  padding: 2em 0;
+}

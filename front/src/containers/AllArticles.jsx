@@ -5,10 +5,6 @@ import ArticlesList from './ArticlesList'
 import { initData } from '../actions/objets'
 
 class AllArticles extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
 
   componentDidMount() {
     this.props.initData();

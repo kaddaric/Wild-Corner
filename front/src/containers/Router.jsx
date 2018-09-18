@@ -18,10 +18,10 @@ class Router extends Component {
       <div className="Router">
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" render={() =>  signIn.logged ? <Home /> : <SignIn /> }/>
+            <Route exact path="/" component={Home} />
             {/* <Route path="/home" component={Home} /> */}
             <Route path="/myarticles/add" component={AddArticle} />
-            <Route path="/myarticles" component={MyArticles} />
+            <Route path="/myarticles" render={() =>  signIn.isLogged ? <MyArticles /> : <SignIn /> } />
             <Route path="/search" component={Search} />
           </Switch>
         </BrowserRouter>

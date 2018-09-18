@@ -28,8 +28,12 @@ class Search extends Component {
             <Menu />
             <div className="main col-sm-10">
               <h1 className="title col-12">Rechercher un article</h1>
-              <FormSearch onSubmit={this.submitForm} />
-              <ArticlesList articles={findArticles}/>
+              <div className="content">
+                <FormSearch onSubmit={this.submitForm} />
+              </div>
+              <div className="content">
+                <ArticlesList articles={findArticles}/>
+              </div>
             </div>
           </Row>
         </Container>      

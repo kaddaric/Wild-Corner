@@ -4,10 +4,7 @@ import AllArticles from './AllArticles';
 import Menu from './Menu';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
+
   render() { 
     return (
       <div className="Home">
@@ -16,7 +13,9 @@ class Home extends Component {
             <Menu />
             <div className="main col-sm-10">
               <h1 className="title col-12">Les articles à votre disposition</h1>
-              <AllArticles />
+              <div className="content">
+                <AllArticles />
+              </div>
             </div>
           </Row>
         </Container>

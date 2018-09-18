@@ -18,16 +18,17 @@ class AddArticle extends Component {
   }
 
   render() {
+    const { signIn } = this.props;
     return (
       <div className="AddArticle">
         <Container fluid>
           <Row>
-
-            <Menu />
-
-            <div className="col-sm-10">
-              <h1 className="col-12">Ajouter votre article</h1>
-              <FormAddArticle onSubmit={this.submitForm} />
+            <Menu connect={signIn[0].login}/>
+            <div className="main col-sm-10">
+              <h1 className="title col-12">Ajouter votre article</h1>
+              <div className="content">
+                <FormAddArticle onSubmit={this.submitForm} />
+              </div>
             </div>
           </Row>
         </Container>
@@ -36,7 +37,13 @@ class AddArticle extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    signIn: state.signIn,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ addArticle }, dispatch)
 }
-export default connect(null, mapDispatchToProps)(AddArticle);
+export default connect(mapStateToProps, mapDispatchToProps)(AddArticle);
