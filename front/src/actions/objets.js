@@ -66,7 +66,7 @@ export function searchArticle(values) {
 export function deleteMyArticle(id) {
   return (dispatch) => {
     return (
-      axios.put('http://localhost:5000/api/myarticles/delete', {
+      axios.put('/api/myarticles/delete', {
         id
       })
       .then(res => {
