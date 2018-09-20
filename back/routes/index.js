@@ -13,8 +13,11 @@ router.get('/objets', function(req, res, next) {
 });
 
 // Get my articles
-router.get('/myarticles', function(req, res, next) {
-  connection.query('SELECT * FROM Objets WHERE id_propriétaire = 1;', function(error, results, fields) {
+router.put('/myarticles', function(req, res, next) {
+  console.log(req.body);
+  
+  const id = req.body.id;
+  connection.query(`SELECT * FROM Objets WHERE id_propriétaire = '${id}';`, function(error, results, fields) {
     if (error) {console.log("error : ", error)}
     else {      
       res.send(results); 
@@ -80,7 +83,7 @@ router.put('/search', function(req, res, next) {
 // Check Sign in
 router.put('/signin', function(req, res, next) {    
   const login = req.body.login;
-  connection.query(`SELECT login , password FROM Proprietaires WHERE login = '${login}';`, function(error, results, fields) {
+  connection.query(`SELECT * FROM Proprietaires WHERE login = '${login}';`, function(error, results, fields) {
     if (error) {console.log("error : ", error)}
     else {     
       req.body.password === results[0].password          

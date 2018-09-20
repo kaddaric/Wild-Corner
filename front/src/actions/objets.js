@@ -12,9 +12,9 @@ export const initData = () => {
   }
 }
 
-export const selectMyArticle = () => {
+export const selectMyArticle = (id) => {  
   return (dispatch) => {
-    axios.get('http://localhost:5000/api/myarticles')
+    axios.put('http://localhost:5000/api/myarticles', { id: id })
       .then(res => {
         dispatch({
           type: "SELECT_MY_ARTICLES",

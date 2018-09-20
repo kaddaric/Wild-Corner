@@ -13,7 +13,13 @@ class AddArticle extends Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
-  submitForm(values) {    
+  submitForm(values) {
+    values = {
+      ...values,
+      id_propriétaire: this.props.signIn[0].id,
+    }
+    console.log(values);
+     
     this.props.addArticle(values);
   }
 

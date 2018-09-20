@@ -14,12 +14,12 @@ class MyArticles extends Component {
     this.state = {}
   }
 
-  componentDidMount() {
-    this.props.selectMyArticle();
+  componentDidMount() {    
+    this.props.selectMyArticle(this.props.signIn[0].id);
   }
   render() {
 
-    const { myArticles } = this.props;
+    const { myArticles, signIn } = this.props;
     return (
       <div className="MyArticle">
         <Container fluid>
@@ -28,7 +28,7 @@ class MyArticles extends Component {
             <div className="main col-sm-10">
               <h1 className="title col-12">Mes articles</h1>
               <div className="content">
-                <ArticlesList articles={myArticles} myaccount={true} />
+                <ArticlesList articles={myArticles} connected={signIn.isLogged}  />
                 <Button tag={Link} to='./myarticles/add'>Ajouter un article</Button>
               </div>
             </div>

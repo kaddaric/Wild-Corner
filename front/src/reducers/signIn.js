@@ -1,4 +1,5 @@
 const initialState = {
+  id: 0,
   login: "",
   password: "",
   isLogged: false,

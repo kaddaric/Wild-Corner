@@ -53,19 +53,7 @@ class FormAddArticle extends Component {
             </div>
           </div>
           <div>
-            <label className="labelForm">Identification</label>
-            <div>
-              <Field
-                name="id_propriétaire"
-                component="input"
-                type="text"
-                placeholder="Id"
-                className="form-control" 
-              />
-            </div>
-          </div>
-          <div>
-            <Button py-2 type="submit" disabled={pristine || submitting}>Envoyer</Button>
+            <Button type="submit" disabled={pristine || submitting}>Envoyer</Button>
           </div>
         </form>
       </div>

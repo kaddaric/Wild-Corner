@@ -8,7 +8,7 @@ class ArticlesList extends Component {
 
   render() {
 
-    const { articles, myaccount, deleteMyArticle } = this.props
+    const { articles, connected, deleteMyArticle } = this.props
     return (
       <div className="ArticlesList">
         <ul>
@@ -27,7 +27,7 @@ class ArticlesList extends Component {
                       </div>
                       <div className="col-2">
                         {
-                          myaccount ? (
+                          connected ? (
                             <div>
                               <Badge color="danger" onClick={() => deleteMyArticle(objet.id)}>X</Badge> 
                               <Badge color="secondary">I</Badge>
