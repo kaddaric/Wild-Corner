@@ -1,0 +1,58 @@
+
+$primary-color: #f98830;
+$secondary-color: #455357;
+$third-color: #c8bede;
+$text-color: #000000;
+$active-color: #ffffff;
+$dark-red: #c52121;
+
+body {
+  height: 100%;;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Menu {
+  height: 100vh;
+  position: relative;
+  top: 0;
+  background-color: $secondary-color;
+  .logo {
+    justify-content: center;
+  }
+  .menuButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .icone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: $active-color;
+      margin-bottom: 1em;
+    }
+    .legende {
+      color: $active-color;
+    }
+  }
+}
+
+.main {
+  background-color: $third-color;
+  .title {
+    border-bottom: solid 2px $dark-red;
+    margin: 1em;
+  }
+  .content {
+    margin: 3em;
+  }
+}
+
+.labelForm {
+  padding: 2em 0;
+}
