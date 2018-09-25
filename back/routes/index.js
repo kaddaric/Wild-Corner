@@ -13,9 +13,7 @@ router.get('/objets', function(req, res, next) {
 });
 
 // Get my articles
-router.put('/myarticles', function(req, res, next) {
-  console.log(req.body);
-  
+router.put('/myarticles', function(req, res, next) {  
   const id = req.body.id;
   connection.query(`SELECT * FROM Objets WHERE id_propriétaire = '${id}';`, function(error, results, fields) {
     if (error) {console.log("error : ", error)}
