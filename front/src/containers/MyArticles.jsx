@@ -15,7 +15,7 @@ class MyArticles extends Component {
   }
 
   componentDidMount() {    
-    this.props.selectMyArticle(this.props.signIn[0].id);
+    this.props.selectMyArticle(this.props.signIn.id);
   }
   render() {
 

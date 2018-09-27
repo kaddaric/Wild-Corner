@@ -6,6 +6,8 @@ import MyArticles from './MyArticles';
 import AddArticle from './AddArticle';
 import Search from './Search';
 import SignIn from './SignIn';
+import SignUp from './SignUp';
+
 
 class Router extends Component {
   constructor(props) {
@@ -20,6 +22,7 @@ class Router extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/myarticles/add" component={AddArticle} />
+            <Route path="/signUp" component={SignUp} />
             <Route path="/myarticles" render={() =>  signIn.isLogged ? <MyArticles /> : <SignIn /> } />
             <Route path="/search" component={Search} />
           </Switch>
