@@ -12,7 +12,7 @@ class Menu extends Component {
   
   render() {
     const { signIn } = this.props;
-    const connect = signIn.isLogged ? signIn[0].login : "connexion";
+    const connect = signIn.isLogged ? signIn.login : "connexion";
 
     return (
       <Container className="Menu col-sm-2">
@@ -20,6 +20,7 @@ class Menu extends Component {
           <NavLink tag={Link} to="/">
             <img className="card-img-top" src={logo} alt="wild corner" />
           </NavLink>
+          <NavLink color="white" tag={Link} to="/signUp">Je m'inscris</NavLink>
         </Row>
         <Nav className="ml-auto" navbar>
           <Col>

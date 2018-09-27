@@ -16,7 +16,7 @@ class AddArticle extends Component {
   submitForm(values) {
     values = {
       ...values,
-      id_propriétaire: this.props.signIn[0].id,
+      id_proprietaire: this.props.signIn.id,
     }
     console.log(values);
      
@@ -24,12 +24,11 @@ class AddArticle extends Component {
   }
 
   render() {
-    const { signIn } = this.props;
     return (
       <div className="AddArticle">
         <Container fluid>
           <Row>
-            <Menu connect={signIn[0].login}/>
+            <Menu />
             <div className="main col-sm-10">
               <h1 className="title col-12">Ajouter votre article</h1>
               <div className="content">
