@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Container, Row, Col, Nav, NavLink } from 'reactstrap';
+import { bindActionCreators } from 'redux';
+import { Container, Row, Col, Nav, NavLink, Button } from 'reactstrap';
+import { resetConnexion } from '../actions/signIn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,7 +11,12 @@ import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/logo.jpg';
 
 class Menu extends Component {
-  
+
+  reset(){    
+    this.props.resetConnexion();
+    window.location.href = "/";
+  }
+
   render() {
     const { signIn } = this.props;
     const connect = signIn.isLogged ? signIn.login : "connexion";
@@ -20,7 +27,12 @@ class Menu extends Component {
           <NavLink tag={Link} to="/">
             <img className="card-img-top" src={logo} alt="wild corner" />
           </NavLink>
-          <NavLink color="white" tag={Link} to="/signUp">Je m'inscris</NavLink>
+          {
+            !signIn.isLogged 
+              ? <NavLink tag={Link} to="/signUp">Je m'inscris</NavLink>
+              : <Button onClick={() => this.reset()}>Déconnexion</Button>
+          }
+          
         </Row>
         <Nav className="ml-auto" navbar>
           <Col>
@@ -49,4 +61,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Menu);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ resetConnexion }, dispatch)
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
