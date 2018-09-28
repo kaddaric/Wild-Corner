@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button, Container, Row } from 'reactstrap';
 import Menu from './Menu';
 import ArticlesList from './ArticlesList';
-import { selectMyArticle } from '../actions/objets'
+import { selectMyArticle } from '../actions/objets';
 
 
 class MyArticles extends Component {

@@ -11,3 +11,9 @@ export const signIn = (values) => {
       })
   }
 }
+
+export const resetConnexion = () => {
+  return {
+    type: "RESET_CONNEXION"
+  }
+}

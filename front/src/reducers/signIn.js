@@ -15,6 +15,10 @@ export function signIn(state = initialState, action) {
       newState = action.data;
       break;
 
+    case "RESET_CONNEXION":
+      newState = initialState;
+      break;
+      
     default:
       break;
   }

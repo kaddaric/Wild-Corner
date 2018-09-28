@@ -17,9 +17,7 @@ class AddArticle extends Component {
     values = {
       ...values,
       id_proprietaire: this.props.signIn.id,
-    }
-    console.log(values);
-     
+    }     
     this.props.addArticle(values);
   }
 

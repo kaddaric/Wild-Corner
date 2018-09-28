@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const initData = () => {
   return (dispatch) => {
-    axios.get('http://localhost:5000/api/objets')
+    axios.get('/api/objets')
       .then(res => {
         dispatch({
           type: "INIT_DATA",
@@ -14,7 +14,7 @@ export const initData = () => {
 
 export const selectMyArticle = (id) => {  
   return (dispatch) => {
-    axios.put('http://localhost:5000/api/myarticles', { id: id })
+    axios.put('/api/myarticles', { id: id })
       .then(res => {
         dispatch({
           type: "SELECT_MY_ARTICLES",
@@ -27,7 +27,7 @@ export const selectMyArticle = (id) => {
 export function addArticle(values) {  
   return (dispatch) => {
     return (
-      fetch("http://localhost:5000/api/myarticles/add", {
+      fetch("/api/myarticles/add", {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ export function addArticle(values) {
 export function searchArticle(values) {  
   return (dispatch) => {
     return (
-      fetch("http://localhost:5000/api/search", {
+      fetch("/api/search", {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
