@@ -71,7 +71,7 @@ export function deleteMyArticle(id) {
       })
       .then(res => {
         if (res.status === 200) {
-          alert("l'article a été supprimé")
+          alert("l'article a été supprimé");
         }
       })
     );

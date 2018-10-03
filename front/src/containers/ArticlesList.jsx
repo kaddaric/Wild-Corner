@@ -6,9 +6,13 @@ import { Badge } from 'reactstrap'
 
 class ArticlesList extends Component {
 
+  delete(objet){
+    this.props.deleteMyArticle(objet);
+  }
+
   render() {
 
-    const { articles, connected, deleteMyArticle } = this.props
+    const { articles, connected } = this.props
     return (
       <div className="ArticlesList">
         <ul>
@@ -29,7 +33,7 @@ class ArticlesList extends Component {
                         {
                           connected ? (
                             <div>
-                              <Badge color="danger" onClick={() => deleteMyArticle(objet.id)}>X</Badge> 
+                              <Badge color="danger" onClick={() => this.delete(objet.id)}>X</Badge> 
                               <Badge color="secondary">I</Badge>
                             </div>
                           ) : null
@@ -49,7 +53,6 @@ class ArticlesList extends Component {
     );
   }
 }
-
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ deleteMyArticle }, dispatch)

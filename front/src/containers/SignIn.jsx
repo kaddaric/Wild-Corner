@@ -17,7 +17,15 @@ class SignIn extends Component {
     this.props.signIn(values);
   }
 
+  componentWillUpdate(nextProps) {
+    if (nextProps.isLogged) {
+      this.props.history.push("/");
+    }
+  }
+
   render() { 
+    console.log(this.props.signIn);
+    
     return (
       <div className="SignIn">
         <Container>
@@ -30,8 +38,15 @@ class SignIn extends Component {
   }
 }
 
+
+const mapStateToProps = (state) => {
+  return {
+    isLogged: state.signIn.isLogged,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ signIn }, dispatch)
 };
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

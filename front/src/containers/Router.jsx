@@ -7,6 +7,7 @@ import AddArticle from './AddArticle';
 import Search from './Search';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import RequireAuthentification from '../helpers/require-authentification';
 
 
 class Router extends Component {
@@ -15,7 +16,6 @@ class Router extends Component {
     this.state = {  }
   }
   render() { 
-    const { signIn } = this.props;
     return (
       <div className="Router">
         <BrowserRouter>
@@ -23,7 +23,9 @@ class Router extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/myarticles/add" component={AddArticle} />
             <Route path="/signUp" component={SignUp} />
-            <Route path="/myarticles" render={() =>  signIn.isLogged ? <MyArticles /> : <SignIn /> } />
+            <Route path="/signIn" component={SignIn} />
+            <Route path="/myarticles" component={RequireAuthentification(MyArticles)}/>
+            {/* <Route path="/myarticles" render={() =>  signIn.isLogged ? <MyArticles /> : <SignIn /> } /> */}
             <Route path="/search" component={Search} />
           </Switch>
         </BrowserRouter>
