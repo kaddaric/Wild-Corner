@@ -19,6 +19,7 @@ class AddArticle extends Component {
       id_proprietaire: this.props.signIn.id,
     }     
     this.props.addArticle(values);
+    this.props.history.push("/myarticles");
   }
 
   render() {

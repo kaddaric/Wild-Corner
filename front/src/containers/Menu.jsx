@@ -19,7 +19,7 @@ class Menu extends Component {
 
   render() {
     const { signIn } = this.props;
-    const connect = signIn.isLogged ? signIn.login : "connexion";
+    const connect = signIn.isLogged ? signIn.login : "mon compte";
 
     return (
       <Container className="Menu col-sm-2">
@@ -29,8 +29,13 @@ class Menu extends Component {
           </NavLink>
           {
             !signIn.isLogged 
-              ? <NavLink tag={Link} to="/signUp">Je m'inscris</NavLink>
-              : <Button onClick={() => this.reset()}>Déconnexion</Button>
+              ? <Button className="my-1" tag={Link} to="/signUp">Je m'inscris</Button>
+              : <Button className="my-1" onClick={() => this.reset()}>Déconnexion</Button>
+          }
+          {
+            !signIn.isLogged 
+              ? <Button tag={Link} to="/signIn">Connexion</Button>
+              : undefined  
           }
           
         </Row>
